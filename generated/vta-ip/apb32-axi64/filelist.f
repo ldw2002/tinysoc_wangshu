@@ -1,0 +1,13 @@
+rtl/vta.v
+rtl/mem_wrap/mem_ext.v
+rtl/mem_wrap/mem_0_ext.v
+rtl/mem_wrap/tensorFile_0_ext.v
+rtl/mem_wrap/tensorFile_0_0_ext.v
+rtl/mem_wrap/tensorFile_0_1_ext.v
+rtl/mem_wrap/vmeTag_array_ext.v
+rtl/mem_sim/SZFA55_8X128X1CM2.v
+rtl/mem_sim/SZFA55_64X128X1CM2.v
+rtl/mem_sim/SYFA55_128X32X1CM2.v
+rtl/mem_sim/SZFA55_512X64X1CM2.v
+rtl/mem_sim/SZFA55_128X64X1CM2.v
+rtl/mem_sim/SZFA55_16X40X1CM2.v

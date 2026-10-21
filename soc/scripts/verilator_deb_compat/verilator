@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -eu
+
+deb_root=${VERILATOR_DEB_ROOT:?VERILATOR_DEB_ROOT is required}
+exec "${deb_root}/bin/verilator_bin" "$@"

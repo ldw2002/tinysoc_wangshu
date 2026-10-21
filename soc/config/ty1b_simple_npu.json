@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "architecture": {
+    "name": "tvm-vta-ty1b-simple",
+    "reference_cpu": "N310",
+    "implementation_cpu": "vexriscv-standard",
+    "peripherals": ["cpu", "axi", "npu", "ddr", "sram", "uart"]
+  },
+  "soc": {
+    "cpu": "vexriscv",
+    "cpu_variant": "standard",
+    "clock_hz": 200000000,
+    "address_width": 32
+  },
+  "rom": {
+    "base": "0x00000000",
+    "size": "0x00020000"
+  },
+  "ddr": {
+    "enabled": true,
+    "base": "0x40000000",
+    "size": "0x00028000",
+    "data_width": 64,
+    "type": "DDR3",
+    "model": "MT41K256M8",
+    "phy_data_width": 8,
+    "clock_hz": 200000000,
+    "l2_size": 0,
+    "cached": false
+  },
+  "sram": {
+    "base": "0x01000000",
+    "size": "0x00020000"
+  },
+  "uart": {
+    "base": "0xf0000000",
+    "size": "0x00001000",
+    "csr_paging": "0x00000400"
+  },
+  "vta": {
+    "ip_dir": "../../generated/vta-ip/apb32-axi64",
+    "vcr_base": "0xf0001000",
+    "vcr_size": "0x00001000",
+    "vcr_frontend": "apb32",
+    "host_protocol": "apb4",
+    "host_data_width": 32,
+    "memory_protocol": "axi4",
+    "memory_data_width": 64
+  }
+}

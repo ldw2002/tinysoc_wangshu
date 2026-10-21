@@ -1,0 +1,43 @@
+# Python virtual environments
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Build outputs
+build/
+build-*/
+*.o
+*.elf
+*.bin
+*.d
+*.a
+*.so
+*.so.*
+*.tar.gz
+
+# Toolchain and runtime libraries (distributed separately)
+/tools/
+/gcc-runtime/
+
+# Offline Python packages
+/wheelhouse/
+
+# Generated transfer bundles; publish approved packages separately if needed.
+/deliverables/
+
+# Server-provided/private RTL; review redistribution terms before tracking.
+/generated/vta-ip/server-memory-*/
+/generated/vta-ip/**/syncore_be_ram_sdp_en.v
+
+# Logs
+*.log
+conv.log
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store

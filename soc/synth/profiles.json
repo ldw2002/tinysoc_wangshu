@@ -1,0 +1,16 @@
+{
+  "vta-local": {
+    "top": "VTA_Top",
+    "sources": ["generated/vta-ip/apb32-axi64/rtl/vta.v"],
+    "defines": ["SYNTHESIS"],
+    "description": "Local self-contained 16x16 VTA RTL, APB32/AXI64. Not the server BIST release or the whole simulation SoC.",
+    "dc": {"guard_simple_immediate_assertions": true}
+  },
+  "vcr": {
+    "top": "VCRRegisters",
+    "sources": ["generated/vta-ip/apb32-axi64/rtl/vta.v"],
+    "defines": ["SYNTHESIS"],
+    "description": "VTA register block for a quick synthesis/ABC smoke test.",
+    "dc": {"guard_simple_immediate_assertions": true}
+  }
+}

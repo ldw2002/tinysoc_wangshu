@@ -1,0 +1,13 @@
+# LiteX/Migen 2024.12 is validated with Python 3.10. Python 3.14 is not
+# compatible with Migen's bytecode-based clock-domain inspection.
+litex==2024.12
+litedram==2024.12
+migen==0.9.2
+meson==1.7.2
+ninja==1.11.1.4
+pythondata-cpu-vexriscv==1.0.1.post407
+pythondata-software-compiler-rt==0.0.post6206
+pythondata-software-picolibc==1.7.9.post181
+# LiteX's simulation Makefile builds its bundled Ethernet host modules even
+# when this SoC only enables serial2console.
+pythondata-misc-tapcfg==0.0.post517

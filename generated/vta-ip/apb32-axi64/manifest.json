@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "variant": "apb32-axi64",
+  "top": "VTA_Top",
+  "host_protocol": "apb4",
+  "host_data_width": 32,
+  "memory_protocol": "axi4",
+  "memory_data_width": 64,
+  "memory_address_width": 32,
+  "rtl_sha256": "c63e432318179bd8e8ef8192a6954d20a1c0664274f226b4103ccb2cb31b4771",
+  "vta_config_sha256": "6876e92fabe0141a7fdbbe6762889d81f9512fcfbc7d45d6dc1919f639905180",
+  "source_commit": "31fc5363bdeb4c153fa4e284891ab9577341bcb9",
+  "generator": "vta.socgen.SoCVariant",
+  "source_policy": "pre-generated RTL; SoC builds must not invoke Chisel",
+  "host_address_width": 16,
+  "memory_id_width": 8,
+  "interface_file": "interface.json",
+  "interface_sha256": "289fcf723746ecff4d2f79924233cc35a63d96c06a4cac802dfd22731b7e5220"
+}

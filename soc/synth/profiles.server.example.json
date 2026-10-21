@@ -1,0 +1,9 @@
+{
+  "server-vta": {
+    "top": "VTA_Top",
+    "sources": ["generated/vta-ip/apb32-axi64/rtl/vta.v"],
+    "defines": ["SYNTHESIS"],
+    "description": "TEMPLATE ONLY: review server top, add all required wrappers and synthesis macro views, and review defines before use.",
+    "dc": {"guard_simple_immediate_assertions": false}
+  }
+}

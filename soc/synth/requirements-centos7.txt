@@ -1,0 +1,8 @@
+# Offline Linux x86_64 / CentOS 7 variant. Separate from the local Yosys 0.70 baseline.
+# Wasmtime 20's bundled library imports GLIBC symbols no newer than 2.14.
+yowasp-yosys==0.40.0.0.post707
+yowasp-runtime==1.60
+wasmtime==20.0.0
+click==8.1.8
+platformdirs==4.3.8
+importlib-resources==6.5.2

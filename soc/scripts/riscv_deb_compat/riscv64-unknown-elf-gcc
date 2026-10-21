@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -eu
+
+deb_root=${RISCV_DEB_ROOT:?RISCV_DEB_ROOT is required}
+binutils_dir=${deb_root}/lib/riscv64-unknown-elf/bin
+
+# Runtime libraries for the bundled RISC-V cc1/ld (a newer libstdc++ and
+# libmpfr) live outside the toolchain tree, in <project>/gcc-runtime/lib.
+# Apply them here instead of in the caller's environment: a global
+# LD_LIBRARY_PATH would also be inherited by the host g++ used to build the
+# LiteX/Verilator host modules, whose system cc1plus needs the distro
+# libstdc++.
+project_root=$(cd -- "${deb_root}/../../.." && pwd)
+if [ -d "${project_root}/gcc-runtime/lib" ]; then
+    LD_LIBRARY_PATH="${project_root}/gcc-runtime/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+    export LD_LIBRARY_PATH
+fi
+
+# LiteX emits versioned ISA strings (for example rv32i2p0_m).  The
+# compatibility GCC shipped in tools/linux is GCC 9.3 and accepts the
+# equivalent unversioned spellings only.
+args=()
+for arg in "$@"; do
+  case "${arg}" in
+    -march=rv32i2p0_m)   args+=("-march=rv32im") ;;
+    -march=rv32i2p0)     args+=("-march=rv32i") ;;
+    -march=rv32i2p0_mac) args+=("-march=rv32imac") ;;
+    -march=rv32i2p0_ma)  args+=("-march=rv32ima") ;;
+    *)                   args+=("${arg}") ;;
+  esac
+done
+
+exec "${deb_root}/bin/riscv64-unknown-elf-gcc" "-B${binutils_dir}/" "${args[@]}"

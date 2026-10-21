@@ -1,0 +1,21 @@
+# Conservative environment definition.
+#
+# conda/pip 只管理 Python 与 LiteX/Migen 相关的 Python 依赖。
+# 宿主编译器（CentOS 7 gcc/g++ 4.8）、Verilator、RISC-V 交叉工具链、
+# 运行库和头文件仍然通过 tinyvta-tools-all.tar.gz 单独分发。
+name: tinyvta-py310
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - litex==2024.12
+      - litedram==2024.12
+      - migen==0.9.2
+      - meson==1.7.2
+      - ninja==1.11.1.4
+      - pythondata-cpu-vexriscv==1.0.1.post407
+      - pythondata-software-compiler-rt==0.0.post6206
+      - pythondata-software-picolibc==1.7.9.post181
+      - pythondata-misc-tapcfg==0.0.post517
